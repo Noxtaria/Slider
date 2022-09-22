@@ -11,11 +11,21 @@ export default function Slider() {
     })
 
     const nextSlide = () => {
-        console.log("Next");
+        if(slideAnim.index !== dataSlider.length){
+            setSlideAnim({index: slideAnim.index + 1, inProgress: true})
+        }
+        else if (slideAnim.index === dataSlider.length){
+            setSlideAnim({index: 1, inProgress: true})
+        }
     }
 
     const prevSlide = () => {
-        console.log("Prev");
+        if(slideAnim.index !== 1){
+            setSlideAnim({index: slideAnim.index - 1, inProgress: true})
+        }
+        else if (slideAnim.index === 1){
+            setSlideAnim({index: 5, inProgress: true})
+        }
     }
 
   return (
